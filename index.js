@@ -4,6 +4,7 @@ let Faker = require('faker');
 let multer = require('multer');
 let bodyparser = require('body-parser');
 let app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -50,6 +51,6 @@ app.post('/api/fail', (req, res)=>{
     res.status(408).json({error: true, message: "something went horribly wrong"});
 })
 
-app.listen($PORT, ()=>{
-    console.log(`Server Running on port ${$PORT}`);
+app.listen(PORT, ()=>{
+    console.log(`Server Running on port ${PORT}`);
 })
