@@ -32,6 +32,15 @@ app.get('/api/newnote', (req, res)=>{
     })
 })
 
+app.get('/api/jobprefill', (req, res)=>{
+    let job = {
+        description: Faker.lorem.sentence(),
+        cost: Faker.finance.amount()
+    }
+
+    res.json(job);
+});
+
 app.post('/api/login', (req, res)=>{
     console.log(req.body);
 
