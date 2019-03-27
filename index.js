@@ -50,6 +50,6 @@ app.post('/api/fail', (req, res)=>{
     res.status(408).json({error: true, message: "something went horribly wrong"});
 })
 
-app.listen(3000, ()=>{
-    console.log('Server Running on port 3000');
+app.listen(config.port, ()=>{
+    console.log(`Server Running on port ${config.port}`);
 })
